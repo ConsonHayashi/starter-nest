@@ -32,3 +32,9 @@ lerna-debug.log*
 !.vscode/tasks.json
 !.vscode/launch.json
 !.vscode/extensions.json
+
+
+# app config
+
+src/app.mysql.module.ts
+src/app.mail.module.ts
