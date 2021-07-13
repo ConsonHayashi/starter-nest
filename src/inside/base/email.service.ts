@@ -10,12 +10,12 @@ export class EmailService {
   send(toEmail: string, suject: string, html: string): void {
     const code = html;
     const date = new Date();
-    console.log(toEmail, suject, code, process.cwd() + "/src/base",)
+    console.log(toEmail, suject, code, process.cwd() + "/src/inside/conf")
     const emailOptions = {
       to: toEmail,
       from: '1745509482@qq.com',
       subject: suject,
-      template: "src/base/validate",
+      template: "src/inside/conf/send-code-email",
       context: {
         code, //验证码
         date, //日期
@@ -25,7 +25,7 @@ export class EmailService {
 
     this.mailService.sendMail(emailOptions).then(
       _ => {
-        Logger.log(111)
+        Logger.log("Send mail success.")
       }
     ).catch(
       err => Logger.error(err)

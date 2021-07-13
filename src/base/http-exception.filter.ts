@@ -19,8 +19,9 @@ export class HttpExceptionFilter implements ExceptionFilter {
 
     const msgLog = {
       statusCode: status,
-      timestamp: new Date().toISOString(),
+      timestamp: new Date().toLocaleString(),
       path: request.url,
+      method: request.method,
       message: message,
     }
 
@@ -29,8 +30,6 @@ export class HttpExceptionFilter implements ExceptionFilter {
       JSON.stringify(msgLog),
       "HttpExceptionFilter"
     )
-
-
     response
       .status(status)
       .json(msgLog);

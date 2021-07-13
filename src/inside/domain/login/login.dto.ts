@@ -1,5 +1,3 @@
-import { PartialType } from '@nestjs/swagger';
-
 
 export class CreateLoginDto {
   // 名称
@@ -11,6 +9,7 @@ export class CreateLoginDto {
   // 验证码
   code: string;
 }
+
 export class ChangeLoginDto {
   old: CreateLoginDto;
   new: CreateLoginDto;

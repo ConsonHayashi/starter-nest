@@ -1,10 +1,11 @@
-import { Controller, Get, Post, Body, Patch, Param, Delete, Query, Put } from '@nestjs/common';
+import { Controller, Get, Post, Body, Patch, Param, Delete, Query, Put, BadRequestException, Logger } from '@nestjs/common';
 import { LoginService } from './login.service';
 import { CreateLoginDto } from './login.dto';
-import { EmailService } from '../../base/email.service';
-import { check } from 'prettier';
+import { EmailService } from 'src/inside/base/email.service';
 
-@Controller('login')
+
+
+@Controller('user')
 export class LoginController {
   constructor(
     private readonly loginService: LoginService,
@@ -13,14 +14,13 @@ export class LoginController {
 
   @Post()
   register(@Body() createLoginDto: CreateLoginDto) {
+    Logger.log("登陆开始" + JSON.stringify(createLoginDto))
     const flag: boolean = this.check(createLoginDto)
     return this.loginService.logup(createLoginDto);
   }
 
-
   @Put()
   login(@Body() createLoginDto: CreateLoginDto) {
-
     return this.loginService.login(createLoginDto);
   }
 
@@ -50,6 +50,7 @@ export class LoginController {
   }
 
   check(createLoginDto: CreateLoginDto): boolean {
-
+    // throw new BadRequestException("邮箱格式异常：" + createLoginDto.email)
+    return false;
   }
 }
