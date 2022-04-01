@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { mysqlconf } from '../main.const.ts.example';
+import { mysqlconf } from '../main.const';
 
 @Module({
   imports: [
