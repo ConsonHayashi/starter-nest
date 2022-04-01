@@ -1,6 +1,12 @@
-import { BadRequestException, Controller, Get, HttpException } from '@nestjs/common';
 import { Observable } from 'rxjs';
-import { Dictionary } from '../../../entity/dictionary.entity';
+import { Dictionary } from 'src/database/entity/dictionary.entity';
+
+import {
+  BadRequestException,
+  Controller,
+  Get,
+} from '@nestjs/common';
+
 import { DictionaryService } from './dictionary.service';
 
 @Controller('dictionary')

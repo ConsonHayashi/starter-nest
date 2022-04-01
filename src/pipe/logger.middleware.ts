@@ -1,5 +1,4 @@
-import { Logger } from "@nestjs/common";
-
+import { Logger } from '@nestjs/common';
 
 export interface ReqInfo {
   ip: string;
@@ -11,7 +10,6 @@ export interface ReqInfo {
   param: string;
   body: string;
 }
-
 
 export const reqresLogger = (req, res, next) => {
   const reqInfo = {

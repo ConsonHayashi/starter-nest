@@ -1,7 +1,9 @@
+import { Dictionary } from 'src/database/entity/dictionary.entity';
+
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
+
 import { DictionaryController } from './dictionary.controller';
-import { Dictionary } from '../../../entity/dictionary.entity';
 import { DictionaryService } from './dictionary.service';
 
 @Module({

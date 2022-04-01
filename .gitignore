@@ -1,5 +1,7 @@
 # compiled output
-/dist
+
+dist
+**/dist
 /node_modules
 
 # Logs
@@ -35,6 +37,4 @@ lerna-debug.log*
 
 
 # app config
-
-src/app.mysql.module.ts
-src/app.mail.module.ts
+main.const.ts
