@@ -5,6 +5,7 @@ import { APP_FILTER } from '@nestjs/core';
 
 import { AppMysqlModule } from './database/app.mysql.module';
 import { AppMailModule } from './email/app.mail.module';
+import { FileModule } from './file/file.module';
 import { DictionaryModule } from './index/dictionary/dictionary.module';
 import { HttpExceptionFilter } from './pipe/exception.filter';
 
@@ -13,6 +14,7 @@ import { HttpExceptionFilter } from './pipe/exception.filter';
     AppMysqlModule,
     DictionaryModule,
     AppMailModule,
+    FileModule
   ],
   controllers: [],
   providers: [
