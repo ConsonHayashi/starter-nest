@@ -38,3 +38,4 @@ lerna-debug.log*
 
 # app config
 main.const.ts
+**/main.const.ts
