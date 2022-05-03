@@ -1,10 +1,10 @@
-import { Dictionary } from 'src/database/entity/dictionary.entity';
+import { Dictionary } from 'src/interface/entity/dictionary.entity';
 
 import { Module } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 
-import { DictionaryController } from './dictionary.controller';
-import { DictionaryService } from './dictionary.service';
+import { DictionaryController } from '../layer/http/dictionary.controller';
+import { DictionaryService } from '../layer/service/dictionary.service';
 
 @Module({
   imports: [
@@ -17,3 +17,4 @@ import { DictionaryService } from './dictionary.service';
   ]
 })
 export class DictionaryModule { }
+

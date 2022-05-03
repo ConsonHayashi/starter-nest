@@ -33,5 +33,6 @@ export const reqresLogger = (req, res, next) => {
     method: res.mothod,
     message: res.message
   }
+
   Logger.log("响应结束：" + JSON.stringify(resInfo));
 };

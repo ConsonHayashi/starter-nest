@@ -1,4 +1,8 @@
-import { Test, TestingModule } from '@nestjs/testing';
+import {
+  Test,
+  TestingModule,
+} from '@nestjs/testing';
+
 import { DictionaryController } from './dictionary.controller';
 
 describe('DictionaryController', () => {

@@ -2,7 +2,7 @@ import {
   from,
   Observable,
 } from 'rxjs';
-import { Dictionary } from 'src/database/entity/dictionary.entity';
+import { Dictionary } from 'src/interface/entity/dictionary.entity';
 import { Repository } from 'typeorm';
 
 import { Injectable } from '@nestjs/common';

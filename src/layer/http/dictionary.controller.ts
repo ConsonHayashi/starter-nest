@@ -1,5 +1,5 @@
 import { Observable } from 'rxjs';
-import { Dictionary } from 'src/database/entity/dictionary.entity';
+import { Dictionary } from 'src/interface/entity/dictionary.entity';
 
 import {
   BadRequestException,
@@ -7,7 +7,7 @@ import {
   Get,
 } from '@nestjs/common';
 
-import { DictionaryService } from './dictionary.service';
+import { DictionaryService } from '../service/dictionary.service';
 
 @Controller('dictionary')
 export class DictionaryController {

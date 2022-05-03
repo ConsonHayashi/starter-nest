@@ -15,7 +15,7 @@ import {
 } from '@nestjs/common';
 import { FilesInterceptor } from '@nestjs/platform-express';
 
-import { directories } from '../main.const';
+import { directories } from '../../main.const';
 import {
   documentFileFilter,
   editFileName,
@@ -23,7 +23,7 @@ import {
   imageFileFilter,
   movieFileFilter,
   musicFileFilter,
-} from './file.filter';
+} from '../pipe/file.filter';
 
 /**
   "Public",
@@ -33,7 +33,8 @@ import {
   "Music",
  */
 @Controller()
-export class IndexController {
+export class FileController {
+
   @Get()
   index(@Res() res: Response) {
     res.sendFile(path.join(os.homedir(), directories[0], 'index.html'))

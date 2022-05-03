@@ -7,7 +7,7 @@ import {
   Logger,
 } from '@nestjs/common';
 
-import { emailconf } from '../main.const';
+import { emailconf } from '../../main.const';
 
 @Injectable()
 export class EmailService {

@@ -1,23 +1,36 @@
-import { ArgumentsHost, Catch, ExceptionFilter, HttpException, HttpStatus, Logger } from '@nestjs/common';
-import { Request, Response } from 'express';
+import {
+  Request,
+  Response,
+} from 'express';
+import { LogMessage } from 'src/interface/internal/logmessage.internal';
+
+import {
+  ArgumentsHost,
+  Catch,
+  ExceptionFilter,
+  HttpException,
+  HttpStatus,
+  Logger,
+} from '@nestjs/common';
 
 @Catch()
 export class HttpExceptionFilter implements ExceptionFilter {
+
   catch(exception: HttpException, host: ArgumentsHost) {
     const context = host.switchToHttp();
     const request: Request = context.getRequest();
     const response: Response = context.getResponse();
 
-    const status =
+    const status: number =
       exception instanceof HttpException
         ? exception.getStatus()
         : HttpStatus.INTERNAL_SERVER_ERROR;
 
-    const message =
+    const message: string =
       exception.message ||
-      null;
+      "It's an empty message";
 
-    const msgLog = {
+    const msgLog: LogMessage = {
       statusCode: status,
       timestamp: new Date().toLocaleString(),
       path: request.url,
@@ -30,6 +43,7 @@ export class HttpExceptionFilter implements ExceptionFilter {
       JSON.stringify(msgLog),
       "HttpExceptionFilter"
     )
+
     response
       .status(status)
       .json(msgLog);
